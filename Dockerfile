@@ -40,4 +40,4 @@ COPY . .
 
 # Run the application
 EXPOSE 8009
-ENTRYPOINT ["serve.sh"]
+ENTRYPOINT ["/home/appuser/serve.sh"]
