@@ -19,6 +19,10 @@ RUN mkdir -p /base
 WORKDIR /base
 
 # Install python dependencies in /.venv
+COPY Pipfile .
+COPY Pipfile.lock .
+COPY pyproject.toml .
+RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --deploy
 
 FROM base AS runtime
 
